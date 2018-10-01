@@ -1,0 +1,345 @@
+/*
+Theme Name: Loja18
+Version: 1.0
+Description: Child theme for Storefront.
+Author: Woo
+Author URI: https://woocommerce.com
+Template: storefront
+*/
+
+
+$preto: #222;
+$cinza: #777;
+$cinza1: #f5f5f5;
+$cinza2: #cccccc;
+$cinza3: #a2a2a2;
+$cinza4: #58595b;
+$azul: #00458b;
+$azul-escuro: #011b34;
+$vermelho: #e21838;
+
+
+a:focus,
+.focus a {
+	outline: none !important;
+}
+
+button, input[type="button"],
+input[type="reset"], input[type="submit"],
+.button,
+.added_to_cart,
+.widget a.button,
+.site-header-cart .widget_shopping_cart a.button {
+    background-color: $preto;
+    border-color: $preto;
+    color: #fff;
+    outline: 0;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.button:hover,
+.added_to_cart:hover,
+.widget a.button:hover,
+.site-header-cart
+.widget_shopping_cart a.button:hover {
+    color: #fff;
+    outline: 0;
+}
+
+#content{
+	padding-top: 50px;
+}
+
+#secondary{
+	display: none !important;
+}
+#primary,
+.left-sidebar .content-area{
+	width: 100% !important;
+}
+
+/*--- TOPO ------------------------------------------------------*/
+
+header#masthead{
+	height: 270px;
+	padding: 0 !important;
+	background: transparent url(img/bg-topo2.png) center 30px no-repeat;
+
+	.wrapper{
+		width: 100%;
+		//background: #fff;
+		float: left;
+		padding: 50px 0;
+	}
+
+	.storefront-primary-navigation{
+		float: left;
+		width: 100%;
+		text-align: center;
+	}
+
+	#site-navigation{
+		width: 100%;
+		position: absolute;
+		top: 145px;
+		left: 0;
+
+		a{
+			color: $azul;
+			font-weight: 600;
+			font-size: 18px;
+			padding: 1em;
+			text-transform: uppercase;
+
+			&:hover{
+				background: $cinza1;
+			}
+		}
+
+		.handheld-navigation{
+			background: #f5f5f5;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+		}
+	}
+
+	.site-branding{
+		display: inline-block;
+		position: absolute;
+		left: 50%;
+		text-indent: -5000em;
+		transition: all .3s;
+		width: 174px;
+		height: 174px;
+		top: -35px;
+		margin-left: -87px;
+		/*background: transparent url(img/furia-topo.png) top center no-repeat;
+		background-size: 100%;*/
+		img{
+			width: 100%;
+		}
+	}
+
+	/* busca */
+	.site-search{
+	    position: absolute;
+	    top: 30px;
+	    left: 0;
+	    width: 250px;
+
+	    .search-field{
+	        width: 100%;
+	        color: #ccc;
+	        border-radius: 50px;
+	        padding: 5px 40px;
+	        height: 45px;
+	        background: #fff;
+					color: #333;
+					font-size: 16px;
+	    }
+
+			button{display: none;}
+
+	}
+
+	#site-header-cart{
+		width: 20%;
+		position: absolute;
+		right: 0;
+		top: 20px;
+		font-weight: bold;
+		color: $azul;
+
+		a{
+			color: $azul;
+		}
+		a.cart-contents{
+			padding: 1em 0;
+			color: #fff;
+			font-size: 18px;
+			font-weight: 700;
+		}
+		span.count{
+			opacity: 1;
+			font-size: 18px;
+		}
+		a.button{
+			color: #fff;
+		}
+	}
+
+}
+
+
+/*--- ESTILOS GERAIS -------------------------------------------------------------------*/
+
+.woocommerce-message{
+	background: #f6f6f6;
+	color: $azul-escuro;
+
+	a.button.wc-forward,
+	a.restore-item{
+		color: $azul;
+	}
+}
+
+h1.page-title,
+h1.entry-title{
+	width: 100%;
+	text-align: center;
+	color: $azul;
+	font-weight: 900;
+}
+
+form.woocommerce-ordering{
+	float: right;
+	margin-right: 0;
+}
+.woocommerce-cart-tab-container--right{display: none;}
+.woocommerce-breadcrumb{display: none;}
+
+
+/*--- HOME -------------------------------------------------------------------*/
+.home{
+
+	ul.products{
+		li{
+			width: 33.3%;
+
+			@media(max-width:767px){
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+/*--- LISTA PRODUTOS ------------------------------------------*/
+.widget_price_filter .ui-slider .ui-slider-range,
+.widget_price_filter .ui-slider .ui-slider-handle {
+    background-color: $vermelho;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.added_to_cart,
+.widget a.button,
+.site-header-cart
+.widget_shopping_cart a.button{
+	background: $azul;
+	font-weight: 600;
+	text-transform: uppercase !important;
+
+	&:hover{
+		background: $vermelho;
+	}
+}
+
+
+/*--- PAGINA DE UM PRODUTO ---------------------------------*/
+.single-product{
+	h1.product_title{
+		text-align: left;
+	}
+	.woocommerce-tabs.wc-tabs-wrapper{
+		display: none;
+	}
+
+	.related.products{
+		width: 100;
+		float: left;
+		margin-top: 100px;
+
+		h2{
+			text-align: center;
+			font-weight: 600;
+			color: $azul;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+/*--- CHECKOUT ---------------------------------*/
+.woocommerce-checkout{
+
+}
+
+footer{
+	float: left;
+	width: 100%;
+	margin-top: 75px;
+	border-top: 1px solid #ccc;
+
+	a{
+		color: $azul;
+	}
+	.logo{
+		width: 25%;
+		text-align: center;
+		padding: 25px;
+		float: left;
+
+		@media(max-width:767px){
+			width: 100%;
+		}
+
+		img{margin: auto !important;}
+	}
+	.more-info{
+		float: left;
+		padding: 25px;
+		width: 75%;
+		border-left: 1px solid #ccc;
+
+		@media(max-width:767px){
+			width: 100%;
+			text-align: center;
+		}
+
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+
+			li{
+				width: 50%;
+				margin: 0;
+				float: left;
+
+				a{
+					display: inline-block;
+					padding: 10px 0;
+					width: 90%;
+					//border-bottom: 1px solid #ccc;
+				}
+			}
+		}
+		.block{
+			float: left;
+			width: 40%;
+			margin-left: 10%;
+
+			@media(max-width:767px){
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+		.block.facebook{
+			width: 40%;
+			float: right;
+
+			@media(max-width:767px){
+				width: 100%;
+				overflow: hidden;
+			}
+		}
+
+	}
+}
